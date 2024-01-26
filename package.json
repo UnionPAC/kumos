@@ -1,0 +1,14 @@
+{
+  "name": "kumos-project",
+  "version": "1.0.0",
+  "description": "A project to learn how to write a frontend framework",
+  "private": true,
+  "author": "Geoff Jamieson",
+  "license": "ISC",
+  "workspaces": [
+    "packages/runtime"
+  ],
+  "scripts": {
+    "serve:examples": "npx http-server . -o ./examples/"
+    }
+}
