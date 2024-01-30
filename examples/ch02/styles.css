@@ -1,0 +1,104 @@
+:root {
+  --ff-poppins: "Poppins", sans-serif;
+  --fw-normal: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.75em;
+}
+
+ul {
+  text-align: right;
+}
+
+li {
+  list-style-type: none;
+  margin: 1.5em;
+}
+
+span {
+  margin: 2em;
+}
+
+button {
+  padding: 0.4em 0.75em;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background-color: lightgreen;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+button:enabled,
+button:disabled {
+  transition: 0.5s ease-out;
+}
+
+button + button {
+  margin-left: 0.5em;
+}
+
+input + button {
+  margin-left: 0.5em;
+}
+
+input {
+  padding: 0.35em 0.75em;
+}
+
+.add-todo-container {
+  width: 95%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-style: italic;
+    margin-bottom: 0.6em;
+  }
+}
+
+.input-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  margin-bottom: 2rem;
+
+  input {
+    flex-grow: 1;
+    padding: 0.5rem;
+  }
+
+  button {
+    flex-grow: 1;
+    padding: 0.5rem;
+    max-width: 60px;
+  }
+}
+
+.done {
+  text-decoration: line-through;
+}
