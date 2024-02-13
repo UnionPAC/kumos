@@ -3,5 +3,8 @@ export default defineConfig({
   test: {
     reporters: "verbose",
     environment: "jsdom",
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
   },
 });

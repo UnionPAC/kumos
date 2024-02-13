@@ -5,15 +5,18 @@
   "files": [
     "dist/kumos.js"
   ],
+  "type": "module",
   "scripts": {
     "prepack": "npm run build",
     "build": "rollup -c",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^1.2.2",
     "eslint": "^8.56.0",
     "jsdom": "^24.0.0",
     "rollup": "^4.9.6",
