@@ -49,7 +49,7 @@ export function hString(str) {
  *
  * If a child is a string, it is converted to a text node using `hString()`.
  *
- * @param {array} arr the virtual nodes to wrap in a fragment
+ * @param {array} vNodes the virtual nodes to wrap in a fragment
  * @returns {object} the virtual node
  */
 export function hFragment(vNodes) {
@@ -59,6 +59,11 @@ export function hFragment(vNodes) {
   };
 }
 
+/**
+ * Transforms strings into text virtual nodes
+ * @param {array} children
+ * @returns {array}
+ */
 function mapTextNodes(children) {
   return children.map((child) =>
     typeof child === "string" ? hString(child) : child
