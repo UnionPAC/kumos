@@ -57,7 +57,6 @@ describe("h", () => {
       h("button", {}, ["Submit"]),
     ]);
 
-    console.log(vNode);
     expect(vNode).toEqual({
       tag: "div",
       type: DOM_TYPES.ELEMENT,
