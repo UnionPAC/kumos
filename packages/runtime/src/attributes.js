@@ -29,9 +29,11 @@ export function setAttributes(el, attributes) {
 }
 
 /**
+ * 
+ * Adds class name to an HTML element
  *
  * @param {HTMLElement} el The element to add the class name to
- * @param {(string | array)} className
+ * @param {(string | array)} className The class name which to add
  */
 export function setClass(el, className) {
   el.className = "";

@@ -4,7 +4,7 @@
  *
  * @param {object} listeners The event listeners to add
  * @param {EventTarget} el The element to add the listeners to
- * @returns The added listeners
+ * @returns {object} The added listeners
  *
  * Note: The `addEventListener()` method is available because an element node is an instance of the `EventTarget` interace.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
