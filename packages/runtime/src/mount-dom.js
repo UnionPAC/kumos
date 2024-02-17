@@ -3,11 +3,10 @@ import { addEventListeners } from "./events";
 import { DOM_TYPES } from "./h";
 
 /**
- * Creates the DOM nodes for a virtual DOM tree, mounts them in the DOM and modifies the virtual
- * DOM tree to include the corresponding DOM nodes and event listeners.
+ * Creates the DOM nodes for a virtual dom tree, mounts them in the DOM and modifies the virtual dom tree to include the corresponding DOM nodes and event listeners.
  *
- * @param {object} vdom the virtual DOM node to mount
- * @param {HTMLElement} parentEl the parent element to mount the virtual DOM node to
+ * @param {object} vdom the virtual dom node to mount
+ * @param {HTMLElement} parentEl the parent element to mount the virtual dom node to
  */
 export function mountDOM(vdom, parentEl) {
   // Different types of virtual nodes require different DOM nodes to be created
@@ -28,11 +27,11 @@ export function mountDOM(vdom, parentEl) {
 
 /**
  *
- * Creates the text node for a virtual DOM text node.
- * The created 'Text' is added to the 'el' property of the virtual DOM.
+ * Creates the text node for a virtual dom text node.
+ * The created 'Text' is added to the 'el' property of the virtual dom.
  *
- * @param {object} vdom the virtual DOM node of type 'text'
- * @param {HTMLElement} parentEl the parent element to mount the virtual DOM node to
+ * @param {object} vdom the virtual dom node of type 'text'
+ * @param {HTMLElement} parentEl the parent element to mount the virtual dom node to
  */
 function createTextNode(vdom, parentEl) {
   const { value } = vdom;
@@ -43,7 +42,9 @@ function createTextNode(vdom, parentEl) {
 }
 
 /**
- * Put function description here
+ * Creates the HTML element for a virtual dom element node and its children recursively.
+ * The create 'Element' is added to the 'el' property of the virtual dom node
+ * If the virtual dom node includes event listeners, these are added to the virtual dom object, under the 'listeners' property
  *
  * @param {object} vdom
  * @param {HTMLElement} parentEl
@@ -67,6 +68,9 @@ function createElementNode(vdom, parentEl) {
 }
 
 /**
+ * Adds event listeners, classes, styles and all other attributes to the HTML Element
+ * 
+ * Note: Event listeners are added to the virtual dom object, under the 'listeners' property
  *
  * @param {HTMLElement} el
  * @param {object} props
@@ -80,12 +84,12 @@ function addProps(el, props, vdom) {
 }
 
 /**
- * Creates the fragment for a virtual DOM fragment node and its children recursively.
+ * Creates the fragment for a virtual dom fragment node and its children recursively.
  * The vdom's 'el' property is set to the parentEl (HTML Element) because a fragment doesn't actually
- * get attached to the DOM, they are just and array of children, which are appended to the DOM.
+ * get attached to the DOM, they are just an array of children, which are appended to the DOM.
  *
- * @param {object} vdom the virtual DOM node of type 'fragment'
- * @param {HTMLElement} parentEl the parent element to mount the virtual DOM node to
+ * @param {object} vdom the virtual dom node of type 'fragment'
+ * @param {HTMLElement} parentEl the parent element to mount the virtual dom node to
  */
 function createFragmentNodes(vdom, parentEl) {
   const { children } = vdom;
