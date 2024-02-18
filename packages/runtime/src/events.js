@@ -6,16 +6,13 @@
  * @param {EventTarget} el The element to add the listeners to
  * @returns {object} The added listeners
  *
- * Note: The `addEventListener()` method is available because an element node is an instance of the `EventTarget` interace.
- * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
- * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget
  */
 export function addEventListeners(listeners = {}, el) {
   const addedListeners = {};
 
   Object.entries(listeners).forEach(([eventName, handler]) => {
     const listener = addEventListener(eventName, handler, el); // create event listener
-    addEventListener[eventName] = listener; // add event listener by key/value pair to our listeners obj
+    addEventListener[eventName] = listener; // add event listener by to our addedListeners object
   });
 
   return addEventListener;
@@ -33,4 +30,17 @@ export function addEventListeners(listeners = {}, el) {
 export function addEventListener(eventName, handler, el) {
   el.addEventListener(eventName, handler);
   return handler;
+}
+
+
+/**
+ * Removes the event listeners from an event target
+ * 
+ * @param {object} listeners the event listeners to remove
+ * @param {EventTarget} el the element to remove the listeners from
+ */
+export function removeEventListeners(listeners = {}, el) {
+  Object.entries(listeners).forEach(([eventName, handler]) => {
+    el.removeEventListener(eventName, handler)
+  })
 }
