@@ -1,6 +1,6 @@
 /**
  *
- * Sets the attributes of an element
+ * Sets the attributes of an element.
  *
  * Note: It does NOT remove attributes that are not present in the new attributes, except in the case of the `class` attribute.
  *
@@ -30,7 +30,7 @@ export function setAttributes(el, attributes) {
 
 /**
  * 
- * Adds class name to an HTML element
+ * Adds class name to an HTML element.
  *
  * @param {HTMLElement} el The element to add the class name to
  * @param {(string | array)} className The class name which to add
@@ -50,7 +50,7 @@ export function setClass(el, className) {
 }
 
 /**
- * Sets the style on the element
+ * Sets the style on the element.
  *
  * @param {HTMLElement} el The element to add the style to
  * @param {string} name The name of the style property
@@ -61,7 +61,7 @@ export function setStyle(el, name, value) {
 }
 
 /**
- * Removes a style from an element
+ * Removes a style from an element.
  *
  * @param {HTMLElement} el The element to remove the style from
  * @param {string} name The name of the style property

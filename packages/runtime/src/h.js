@@ -35,7 +35,7 @@ export function h(tag, props = {}, children = []) {
 }
 
 /**
- * Creates a text virtual nodes
+ * Creates a text virtual node.
  *
  * @param {string} str the text to add to the text node
  * @returns {object} the virtual node
@@ -45,7 +45,7 @@ export function hString(str) {
 }
 
 /**
- * Creates a fragment virtual node
+ * Creates a fragment virtual node.
  *
  * If a child is a string, it is converted to a text node using `hString()`.
  *
@@ -60,7 +60,7 @@ export function hFragment(vNodes) {
 }
 
 /**
- * Transforms strings into text virtual nodes
+ * Transforms strings into text virtual nodes.
  * @param {array} children
  * @returns {array}
  */

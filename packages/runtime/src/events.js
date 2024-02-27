@@ -20,7 +20,7 @@ export function addEventListeners(listeners = {}, el) {
 
 /**
  *
- * Adds an event listener to an event target and returns the listener
+ * Adds an event listener to an event target and returns the listener.
  *
  * @param {string} eventName the name of the event to listen to
  * @param {(event: Event) => void} handler the event handler function
@@ -34,7 +34,7 @@ export function addEventListener(eventName, handler, el) {
 
 
 /**
- * Removes the event listeners from an event target
+ * Removes the event listeners from an event target.
  * 
  * @param {object} listeners the event listeners to remove
  * @param {EventTarget} el the element to remove the listeners from

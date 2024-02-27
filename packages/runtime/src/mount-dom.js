@@ -43,8 +43,8 @@ function createTextNode(vdom, parentEl) {
 
 /**
  * Creates the HTML element for a virtual dom element node and its children recursively.
- * The create 'Element' is added to the 'el' property of the virtual dom node
- * If the virtual dom node includes event listeners, these are added to the virtual dom object, under the 'listeners' property
+ * The create 'Element' is added to the 'el' property of the virtual dom node.
+ * If the virtual dom node includes event listeners, these are added to the virtual dom object, under the 'listeners' property.
  *
  * @param {object} vdom
  * @param {HTMLElement} parentEl
@@ -68,7 +68,7 @@ function createElementNode(vdom, parentEl) {
 }
 
 /**
- * Adds event listeners, classes, styles and all other attributes to the HTML Element
+ * Adds event listeners, classes, styles and all other attributes to the HTML Element.
  * 
  * Note: Event listeners are added to the virtual dom object, under the 'listeners' property
  *
