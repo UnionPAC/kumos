@@ -1,6 +1,8 @@
 # Kumos
 
-[![Kumos Logo: (KOO-mōs) is a pale periwinkle-blue dog resembling a husky.](https://github.com/UnionPAC/kumos/blob/main/packages/runtime/assets/kumos.png "Credit to Subeta for kumos character design")](https://subeta.fandom.com/wiki/Kumos)
+A frontend JavaScript framework.
+
+[![Kumos Logo: (KOO-mōs) is a pale periwinkle-blue dog resembling a husky.](https://raw.githubusercontent.com/UnionPAC/kumos/main/packages/runtime/assets/kumos.png "Credit to Subeta for kumos character design")](https://subeta.fandom.com/wiki/Kumos)
 
 ## Table of contents
 
@@ -14,7 +16,7 @@
 
 ### Description
 
-Kumos *(kumos.js)* is a lightweight frontend JavaScript framework.
+Kumos _(kumos.js)_ is a lightweight frontend JavaScript framework.
 
 ### Purpose
 
