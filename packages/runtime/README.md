@@ -2,7 +2,7 @@
 
 A frontend JavaScript framework.
 
-[![Kumos Logo: (KOO-mōs) is a pale periwinkle-blue dog resembling a husky.](https://raw.githubusercontent.com/UnionPAC/kumos/main/packages/runtime/assets/kumos.png "Credit to Subeta for kumos character design")](https://subeta.fandom.com/wiki/Kumos)
+[Kumos Logo: (KOO-mōs) is a pale periwinkle-blue dog resembling a husky.](https://raw.githubusercontent.com/UnionPAC/kumos/main/packages/runtime/assets/kumos.png")
 
 ## Table of contents
 
