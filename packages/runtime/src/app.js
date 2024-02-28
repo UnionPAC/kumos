@@ -67,5 +67,14 @@ export function createApp({ state, view, reducers = {} }) {
       vdom = null;
       subscriptions.forEach((unsubscribe) => unsubscribe());
     },
+    /**
+     * Emits an event to the application
+     *
+     * @param {string} eventName the name of the event to emit
+     * @param {any} payload the payload to pass to the event listeners
+     */
+    emit(eventName, payload) {
+      emit(eventName, payload);
+    },
   };
 }
