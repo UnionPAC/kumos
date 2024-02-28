@@ -59,7 +59,7 @@ function removeElementNode(vdom) {
 }
 
 function removeFragmentNode(vdom) {
-  const { children } = vdom;
+  const { el, children } = vdom;
 
   assert(el instanceof HTMLElement);
 
