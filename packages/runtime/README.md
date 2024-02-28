@@ -1,4 +1,4 @@
-# Kumos
+# Kumos (KOO-mōs)
 
 A frontend JavaScript framework.
 

@@ -10,12 +10,10 @@
 export function setAttributes(el, attributes) {
   const { class: className, style, ...otherAttributes } = attributes;
 
-  // set class
   if (className) {
     setClass(el, className);
   }
 
-  // set style
   if (style) {
     Object.entries(style).forEach(([propName, value]) => {
       setStyle(el, propName, value);

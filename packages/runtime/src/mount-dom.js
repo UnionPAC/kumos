@@ -38,6 +38,7 @@ function createTextNode(vdom, parentEl) {
 
   const textNode = document.createTextNode(value);
   vdom.el = textNode; // Save a reference of the node to the vdom in the 'el' property
+  
   parentEl.append(textNode); // Append to the parent element
 }
 

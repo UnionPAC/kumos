@@ -1,4 +1,5 @@
 import { withoutNulls } from "./utils/arrays";
+import { assert } from "./utils/assert";
 
 // types of DOM nodes that need to be represented as virtual nodes
 export const DOM_TYPES = {
@@ -53,6 +54,7 @@ export function hString(str) {
  * @returns {object} the virtual node
  */
 export function hFragment(vNodes) {
+  assert(Array.isArray(vNodes), "hFragment must be an array of vNodes");
   return {
     type: DOM_TYPES.FRAGMENT,
     children: mapTextNodes(withoutNulls(vNodes)),
