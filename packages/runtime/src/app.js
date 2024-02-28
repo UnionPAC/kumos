@@ -1,6 +1,7 @@
-import { mountDOM } from "./mount-dom";
 import { destroyDOM } from "./destroy-dom";
 import { Dispatcher } from "./dispatcher";
+import { mountDOM } from "./mount-dom";
+
 /**
  *
  * Creates an application with the given top-level view, initial state and reducers.

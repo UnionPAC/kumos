@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+    <script type="module">
+      import {
+        createApp,
+        h,
+        hString,
+        hFragment,
+      } from "https://unpkg.com/fe-fwk@1.0.8/dist/fe-fwk.js";
+
+      const state = { count: 0 };
+      const reducers = {
+        decrement: (state) => ({ count: state.count - 1 }),
+        increment: (state) => ({ count: state.count + 1 }),
+      };
+
+      function View(state, emit) {
+        return hFragment([
+          h("button", { on: { click: () => emit("decrement") } }, ["-"]),
+          h("span", {}, [hString(state.count)]),
+          h("button", { on: { click: () => emit("increment") } }, ["+"]),
+        ]);
+      }
+
+      createApp({ state, view: View, reducers }).mount(document.body);
+    </script>
+    <title>Counter</title>
+  </head>
+  <body></body>
+</html>
