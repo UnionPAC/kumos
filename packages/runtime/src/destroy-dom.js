@@ -16,15 +16,15 @@ export function destroyDOM(vdom) {
 
   switch (type) {
     case DOM_TYPES.TEXT:
-      removeTextNode();
+      removeTextNode(vdom);
       break;
 
     case DOM_TYPES.ELEMENT:
-      removeElementNode();
+      removeElementNode(vdom);
       break;
 
     case DOM_TYPES.FRAGMENT:
-      removeFragmentNode();
+      removeFragmentNodes(vdom);
       break;
 
     default:
@@ -58,7 +58,7 @@ function removeElementNode(vdom) {
   }
 }
 
-function removeFragmentNode(vdom) {
+function removeFragmentNodes(vdom) {
   const { el, children } = vdom;
 
   assert(el instanceof HTMLElement);
