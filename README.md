@@ -1,4 +1,4 @@
-# Kumos
+# Kumos (KOO-mōs)
 
 This repo documents my learning process into **how** and **why** frontend JavaScript frameworks work, by building my own from scratch, which is _Kumos.js_
 
