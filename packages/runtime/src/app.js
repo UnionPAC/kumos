@@ -1,6 +1,7 @@
 import { destroyDOM } from "./destroy-dom";
 import { Dispatcher } from "./dispatcher";
 import { mountDOM } from "./mount-dom";
+import { patchDOM } from "./patch-dom";
 
 /**
  *
@@ -12,6 +13,7 @@ import { mountDOM } from "./mount-dom";
 export function createApp({ state, view, reducers = {} }) {
   let parentEl = null;
   let vdom = null;
+  let isMounted = false;
 
   const dispatcher = new Dispatcher();
   const subscriptions = [dispatcher.afterEveryCommand(renderApp)];
@@ -39,12 +41,13 @@ export function createApp({ state, view, reducers = {} }) {
    * DOM instead of destroying and mounting the whole view.
    */
   function renderApp() {
-    if (vdom) {
-      destroyDOM(vdom);
-    }
+    // if (vdom) {
+    //   destroyDOM(vdom);
+    // }
 
-    vdom = view(state, emit);
-    mountDOM(vdom, parentEl);
+    const newVdom = view(state, emit);
+    // mountDOM(vdom, parentEl);
+    vdom = patchDOM(vdom, newVdom, parentEl);
   }
 
   return {
@@ -55,8 +58,14 @@ export function createApp({ state, view, reducers = {} }) {
      * @returns {object} the application object
      */
     mount(_parentEl) {
+      if (isMounted) {
+        throw new Error("The application is already mounted!");
+      }
       parentEl = _parentEl;
-      renderApp();
+      vdom = view(state, emit);
+      mountDOM(vdom, parentEl);
+
+      isMounted = true;
 
       return this;
     },
@@ -69,6 +78,8 @@ export function createApp({ state, view, reducers = {} }) {
       destroyDOM(vdom);
       vdom = null;
       subscriptions.forEach((unsubscribe) => unsubscribe());
+
+      isMounted = false;
     },
     /**
      * Emits an event to the application
