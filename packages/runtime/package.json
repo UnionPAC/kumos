@@ -1,6 +1,7 @@
 {
   "name": "kumos",
   "author": "Geoff Jamieson",
+  "description": "A frontend framework to learn about how frontend frameworks work.",
   "keywords": [
     "frontend",
     "framework",
@@ -22,7 +23,6 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "vitest",
-    "test:run": "vitest run",
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {
