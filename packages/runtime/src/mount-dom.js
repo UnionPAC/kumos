@@ -11,17 +11,21 @@ import { DOM_TYPES } from "./h";
 export function mountDOM(vdom, parentEl) {
   // Different types of virtual nodes require different DOM nodes to be created
   switch (vdom.type) {
-    case DOM_TYPES.TEXT:
+    case DOM_TYPES.TEXT: {
       createTextNode(vdom, parentEl);
       break;
-    case DOM_TYPES.ELEMENT:
+    }
+    case DOM_TYPES.ELEMENT: {
       createElementNode(vdom, parentEl);
       break;
-    case DOM_TYPES.FRAGMENT:
+    }
+    case DOM_TYPES.FRAGMENT: {
       createFragmentNodes(vdom, parentEl);
       break;
-    default:
+    }
+    default: {
       throw new Error(`Can't mount DOM of type: ${vdom.type}`);
+    }
   }
 }
 
@@ -38,7 +42,7 @@ function createTextNode(vdom, parentEl) {
 
   const textNode = document.createTextNode(value);
   vdom.el = textNode; // Save a reference of the node to the vdom in the 'el' property
-  
+
   parentEl.append(textNode); // Append to the parent element
 }
 
@@ -62,15 +66,13 @@ function createElementNode(vdom, parentEl) {
   vdom.el = element;
 
   // Mount the children recursively into the element node
-  children.forEach((child) => {
-    mountDOM(child, element);
-  });
+  children.forEach((child) => mountDOM(child, element));
   parentEl.append(element);
 }
 
 /**
  * Adds event listeners, classes, styles and all other attributes to the HTML Element.
- * 
+ *
  * Note: Event listeners are added to the virtual dom object, under the 'listeners' property
  *
  * @param {HTMLElement} el
@@ -96,7 +98,5 @@ function createFragmentNodes(vdom, parentEl) {
   const { children } = vdom;
   vdom.el = parentEl;
 
-  children.forEach((child) => {
-    mountDOM(child, parentEl);
-  });
+  children.forEach((child) => mountDOM(child, parentEl));
 }

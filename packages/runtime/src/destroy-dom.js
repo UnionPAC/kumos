@@ -15,22 +15,24 @@ export function destroyDOM(vdom) {
   assert(!!el, "Can only destroy DOM nodes that have been mounted");
 
   switch (type) {
-    case DOM_TYPES.TEXT:
+    case DOM_TYPES.TEXT: {
       removeTextNode(vdom);
       break;
-
-    case DOM_TYPES.ELEMENT:
+    }
+    case DOM_TYPES.ELEMENT: {
       removeElementNode(vdom);
       break;
-
-    case DOM_TYPES.FRAGMENT:
+    }
+    case DOM_TYPES.FRAGMENT: {
       removeFragmentNodes(vdom);
       break;
-
-    default:
+    }
+    default: {
       throw new Error(`Can't destroy DOM of type ${type}`);
+    }
   }
 
+  // console.log(`Destroying ${type}...`);
   delete vdom.el; // delete property after element has been removed from the DOM
 }
 
@@ -48,9 +50,7 @@ function removeElementNode(vdom) {
   assert(el instanceof HTMLElement);
   el.remove();
 
-  children.forEach((child) => {
-    destroyDOM(child);
-  });
+  children.forEach(destroyDOM);
 
   if (listeners) {
     removeEventListeners(listeners, el);
@@ -63,7 +63,5 @@ function removeFragmentNodes(vdom) {
 
   assert(el instanceof HTMLElement);
 
-  children.forEach((child) => {
-    destroyDOM(child);
-  });
+  children.forEach(destroyDOM);
 }
